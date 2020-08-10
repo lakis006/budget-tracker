@@ -4,6 +4,7 @@
     "start_url": "/",
     "display": "standalone",
     "background_color": "#fff",
+    "theme_color": "808080",
     "description": "An App that that allows the user to be able to add expenses and deposits to their budget with or without a connection. Thereby keeping accurate track of the Users account",
     "icons": [{
       "src": "icons/icon-512x512.png",
