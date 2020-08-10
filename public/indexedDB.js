@@ -1,12 +1,12 @@
 
-let db
+let db;
 const request = window.indexedDB.open("budget", 1);
 
 
 
 request.onupgradeneeded = function (event) {
   const db = event.target.result;
-  let storedObject = db.createObjectStore("pending", { autoIncrement: true });
+  let objectStore = db.createObjectStore("pending", { autoIncrement: true });
 };
 
 request.onsuccess = function (event) {
@@ -24,15 +24,15 @@ request.onerror = function (event) {
 
 function saveRecord(record) {
   const transaction = db.transaction(["pending"], "readwrite");
-  const pendingStore = transaction.storedObject("pending");
+  const storeProcess = transaction.objectStore("pending");
 
-  pendingStore.add(record); //adding a record 
+  storeProcess.add(record); //adding a record 
 }
 
 function checkDatabase() {
   const transaction = db.transaction(["pending"], "readwrite");
-  const pendingStore = transaction.storedObject("pending");
-  const records = pendingStore.getAll();
+  const storeProcess = transaction.objectStore("pending");
+  const records = storeProcess.getAll();
 
 
   records.onsuccess = function () {
@@ -48,9 +48,9 @@ function checkDatabase() {
         .then((res) => res.json())
         .then(() => {
           const transaction = db.transaction(["pending"], "readwrite");
-          const pendingStore = transaction.storedObject("pending");
+          const storeProcess = transaction.objectStore("pending");
 
-          pendingStore.clear();
+          storeProcess.clear();
         });
     }
   }
