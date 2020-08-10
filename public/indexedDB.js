@@ -4,7 +4,7 @@ const request = window.indexedDB.open("budget", 1);
 
 
 
-request.onupgradeneeded = function (e) {
+request.onupgradeneeded = function (event) {
   const db = event.target.result;
   let storedObject = db.createObjectStore("pending", { autoIncrement: true });
 };
