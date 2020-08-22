@@ -37,7 +37,7 @@ function checkDatabase() {
 
   records.onsuccess = function () {
     if (records.result.length > 0) {
-      fetch("/api/transition/bulk", {
+      fetch("/api/transaction/bulk", {
         method: "POST",
         body: JSON.stringify(records.result),
         headers: {
