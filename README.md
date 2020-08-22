@@ -43,7 +43,7 @@ npm install
 npm start
 ```
 
-* Another way to run this App isi to navigate to [Heroku site](https://budget-tracker-jl.herokuapp.com/)
+* Another way to run this App would be to navigate to the deployed [Heroku site](https://budget-tracker-jl.herokuapp.com/)
 
 ## Testing
 
